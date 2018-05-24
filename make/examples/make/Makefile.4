@@ -1,0 +1,7 @@
+gallery.html: beach.jpg bridge.jpg \
+              beach.thumb.jpg bridge.thumb.jpg \
+			  gallery.mako gallery.py
+	python3 gallery.py beach.jpg bridge.jpg > $@
+
+%.thumb.jpg: %.jpg
+	convert -resize 320x $< $@

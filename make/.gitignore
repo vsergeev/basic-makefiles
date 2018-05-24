@@ -1,0 +1,14 @@
+*.aux
+*.log
+*.out
+*.pyg
+*-converted-to.pdf
+*.bbl
+*.blg
+*.lot
+*.lof
+*.toc
+*.nav
+*.snm
+*.vrb
+_minted-basic-makefiles/

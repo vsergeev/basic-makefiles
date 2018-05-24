@@ -1,0 +1,15 @@
+IMAGE_FILES = beach.jpg bridge.jpg
+THUMB_FILES = beach.thumb.jpg bridge.thumb.jpg
+THUMB_WIDTH = 320
+OUTPUT = gallery.html
+
+$(OUTPUT): $(IMAGE_FILES) $(THUMB_FILES) \
+           gallery.mako gallery.py
+	python3 gallery.py $(IMAGE_FILES) > $@
+
+.PHONY: clean
+clean:
+	rm -f $(THUMB_FILES) $(OUTPUT)
+
+%.thumb.jpg: %.jpg
+	convert -resize $(THUMB_WIDTH)x $< $@
